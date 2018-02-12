@@ -10,3 +10,12 @@ This contains a list scripts I wrote for my productivity!
 
 ## san.sh
 * Shows all the alt-names on a SAN cert. Useful when you work with certificates.
+
+## cloudmonitor.js
+* .
+
+## reflector.js
+* .
+
+## aws.sh
+* .

@@ -10,7 +10,7 @@
 awsami="ami-41e0b93b"
 awssecgroupname="us-east-1 sec grp"
 awssecgroupdesc="Rajiv us-east-1 sec grp"
-awskeyname="us-eastva"
+awskeyname="awskey"
 awsinstancetype="m1.small"
 
 echo "---"

@@ -11,11 +11,14 @@ This contains a list scripts I wrote for my productivity!
 ## awslistinstances.sh
 * Script to list all the ec2 instances across all the ec2 regions
 
-## awsuploadkey.sh
-* Script to upload a public key to all the ec2 regions
+## awslistkeys.sh.sh
+* Script to list all the keys across all the ec2 regions
 
 ## awsremovekey.sh
 * Script to remove a public key from all the ec2 regions.
+
+## awsuploadkey.sh
+* Script to upload a public key to all the ec2 regions
 
 ## cloudmonitor.js
 * Used to dump out cloud monitor POST body for visualizing incoming events.

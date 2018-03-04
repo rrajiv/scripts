@@ -11,8 +11,11 @@ This contains a list scripts I wrote for my productivity!
 ## awslistinstances.sh
 * Script to list all the ec2 instances across all the ec2 regions
 
-## awslistkeys.sh.sh
+## awslistkeys.sh
 * Script to list all the keys across all the ec2 regions
+
+## awslistregions.sh
+* Script to list all the current ec2 regions that are available
 
 ## awsremovekey.sh
 * Script to remove a public key from all the ec2 regions.

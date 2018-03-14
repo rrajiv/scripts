@@ -8,6 +8,7 @@
 # Hawaii
 # Pacific
 # Costa Rica
+# Central
 # Eastern
 # GMT
 # London
@@ -27,8 +28,8 @@ dateformat="%A %B %e %r %Z %Y %z"
 # array2 - all the locations
 # array1 and array2 are 1:1 mapping
 
-timezonelabel=('US/Hawaii' 'US/Pacific' 'America/Costa_Rica' 'US/Eastern' 'UTC' 'Europe/London' 'Europe/Zurich' 'Asia/Dubai' 'Asia/Calcutta' 'Asia/Singapore' 'Asia/Tokyo' 'Australia/Sydney')
-timezonename=('Hawaii' 'Pacific' 'Costa Rica' 'Eastern' 'GMT' 'London' 'Zurich' 'Dubai' 'Bangalore' 'Singapore' 'Tokyo' 'Sydney')
+timezonelabel=('US/Hawaii' 'US/Pacific' 'America/Costa_Rica' 'US/Central' 'US/Eastern' 'UTC' 'Europe/London' 'Europe/Zurich' 'Asia/Dubai' 'Asia/Calcutta' 'Asia/Singapore' 'Asia/Tokyo' 'Australia/Sydney')
+timezonename=('Hawaii' 'Pacific' 'Costa Rica' 'Central' 'Eastern' 'GMT' 'London' 'Zurich' 'Dubai' 'Bangalore' 'Singapore' 'Tokyo' 'Sydney')
 
 # loop through the timezone array
 i="0"

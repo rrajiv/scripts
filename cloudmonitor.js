@@ -12,7 +12,7 @@ var dumpbody = function(req, res)
 
     // only look for this pattern and POST requests
     if (incominguri == "/cloudmonitor" && incomingmethod == "POST")
-    {
+    {        
         postbody = "";
         res.writeHead(200);
         req.on('data', function (data) {
@@ -20,9 +20,12 @@ var dumpbody = function(req, res)
         });
 
         req.on('end', function () {
-            console.log(JSON.parse(postbody));
-        });
 
+            // remove certain characters like slash
+            var result = postbody.replace(/\\/g, "");
+            console.log(JSON.parse(result));
+        });
+        
     } // end if
 
     // write the response to user

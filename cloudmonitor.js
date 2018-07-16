@@ -1,5 +1,6 @@
 var http = require("http");
 var url = require("url");
+fs =  require("fs");
 
 // define the callback function that dumps out the cloudmonitor response
 // only want to dump headers for /cloudmonitor
@@ -23,7 +24,12 @@ var dumpbody = function(req, res)
             // remove certain characters like slash
             var result = postbody.replace(/\\/g, "");
             console.log(JSON.parse(result));
-            res.write(JSON.parse(result));
+	    fs.writeFileSync("cm.txt", JSON.parse(result), (err) => {
+		if (err) throw err;
+
+	    });
+
+//            res.write(JSON.parse(result));
         });
         
     } // end if

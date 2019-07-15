@@ -9,7 +9,7 @@ var dumpheader = function(req, res)
     incominguri = url.parse(req.url).pathname;
 
     // only look for this pattern
-    if (incominguri == "/dumpheader")
+    if (incominguri == "/reflector")
     {
         // obtain the request level variables
         req_hostname = req.hostname;

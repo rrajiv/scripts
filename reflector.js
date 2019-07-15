@@ -15,12 +15,16 @@ var dumpheader = function(req, res)
         req_hostname = req.hostname;
         req_baseurl = req.baseUrl;
         req_ipaddr = req.ip; //
-        req_protocol = req.secure; //
+        req_protocol = req.protocol; //
         req_method = req.method;
         req_headers = JSON.stringify(req.headers);
         s = JSON.parse(req_headers);
                 
-        res.writeHead(200, {"Content-Type": "text/html"});
+        // set some headers
+        res.setHeader("Cache-Control", "no-store");
+        res.setHeader("Content-Type", "text/html");
+
+        // set the response body
         res.write("<!DOCTYPE html><html>");
         res.write("<h2> Request from edge </h2>");
         res.write("Variables <br />");
@@ -31,7 +35,7 @@ var dumpheader = function(req, res)
         res.write("Client IP: " + req_ipaddr + "<br />");
         res.write("---------- <br /><br />");
         res.write("Incoming Request Headers <br />");
-        res.write("---------- <br />");
+        res.write("---------- <br />");        
 
         // dump out all the headers
         for (var name in s)

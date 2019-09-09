@@ -33,6 +33,5 @@ var server = restify.createServer();
 // creating the route and the function
 server.get('/responses/:responsecode', senderror);
 
-server.listen(8082, function() {
-  console.log('%s listening at %s', server.name, server.url);
-});
+// listen for requests
+server.listen(8082);

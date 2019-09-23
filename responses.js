@@ -13,6 +13,10 @@ function senderror(req, res, next)
 		next(new errs.ForbiddenError());
 	else if (respcode == "429")
 		next(new errs.TooManyRequestsError());
+    else if (respcode == "416")
+        next(new errs.RangeNotSatisfiableError());
+    else if (respcode == "401")
+        next(new errs.UnauthorizedError());
 	else if (respcode == "500")
 		next(new errs.InternalServerError());
 	else if (respcode == "502")

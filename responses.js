@@ -6,6 +6,9 @@ function senderror(req, res, next)
 	// read the incoming response code
 	var respcode = req.params.responsecode;
 
+    // send the cache control header
+    res.header('Cache-control', 'max-age=20s');
+
 	// do some selective response codes	
 	if (respcode == "404")
 		next(new errs.NotFoundError());

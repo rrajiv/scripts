@@ -7,12 +7,22 @@ fs =  require("fs");
 // rest get a standard response
 var dumpbody = function(req, res)
 {
-    incominguri = url.parse(req.url).pathname;
-    incomingmethod = req.method;
-
+    // capture incoming details
+    var incominguri = url.parse(req.url).pathname;
+    var incomingmethod = req.method;
+    var timestamp = new Date( Date.now());
+    
     // only look for this pattern and POST requests
     if (incominguri == "/cloudmonitor" && incomingmethod == "POST")
-    {        
+    {
+        // capture incoming headers        
+        var incomingheaders = JSON.stringify(req.headers);
+
+        console.log("Requet URI =  " + incominguri);
+        console.log("Request Headers = " + incomingheaders);
+        console.log("Request Time = " + timestamp);
+        console.log("POST body below = ");
+
         postbody = "";
         res.writeHead(200);
         req.on('data', function (data) {
@@ -20,16 +30,10 @@ var dumpbody = function(req, res)
         });
 
         req.on('end', function () {
-
             // remove certain characters like slash
             var result = postbody.replace(/\\/g, "");
             console.log(JSON.parse(result));
-	    fs.writeFileSync("cm.txt", JSON.parse(result), (err) => {
-		if (err) throw err;
-
-	    });
-
-//            res.write(JSON.parse(result));
+            console.log("----");
         });
         
     } // end if
@@ -41,4 +45,4 @@ var dumpbody = function(req, res)
 
 // create a server and listener
 var server = http.createServer(dumpbody);
-server.listen(8081);
+server.listen(5001);

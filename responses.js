@@ -5,9 +5,13 @@ function senderror(req, res, next)
 {
 	// read the incoming response code
 	var respcode = req.params.responsecode;
+	
+	// read the incoming headers
+	var headers = JSON.stringify(req.headers);
 
-    // send the cache control header
-//    res.header('Cache-control', 'max-age=20s');
+	// dump the outputs for debugging
+	console.log("Incoming response code = " + respcode);		
+	console.log("headers = " + headers);
 
 	// do some selective response codes	
 	if (respcode == "404")
@@ -49,4 +53,4 @@ var server = restify.createServer();
 server.get('/responses/:responsecode', senderror);
 
 // listen for requests
-server.listen(8082);
+server.listen(5000);
